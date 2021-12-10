@@ -8,11 +8,14 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		testGetMenuItemListAdmin();
+		testGetMenuItemListCustomer();
+		testModifyMenuItem();
+
 	}
 	
 	public static void testGetMenuItemListAdmin() {
 		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
-		
+		System.out.println("testGetMenuItemListAdmin\n");
 		// iterate through menuItemList and display all att for each menu item
 		for (MenuItem item: menuItemDao.getMenuItemListAdmin())
 		{
@@ -20,7 +23,18 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 		}
 	}
 	
-	public static void testGetMenuItemListCustomer() {}
+	public static void testGetMenuItemListCustomer() {
+		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
+		System.out.println("testGetMenuItemListCustomer\n");
+		for (MenuItem item: menuItemDao.getMenuItemListCostumer())
+		{
+			System.out.println(item.toString());
+		}
+	}
+	
+	public static void testModifyMenuItem() {
+		
+	}
 
 	@Override
 	public List<MenuItem> getMenuItemListAdmin() {

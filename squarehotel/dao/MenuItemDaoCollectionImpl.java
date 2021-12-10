@@ -3,6 +3,7 @@ package dao;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 import model.MenuItem;
 
@@ -42,7 +43,10 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 		
 		for(MenuItem item: menuItemList)
 		{
-			
+			if(item.isActive())
+			{
+				local.add(item);
+			}
 		}
 		
 		return local;
@@ -51,12 +55,18 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	@Override
 	public void modifyMenuItem(MenuItem menuitem) {
 		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public MenuItem getMenuItem(long menuItemId) {
 		// TODO Auto-generated method stub
+		for(MenuItem item: menuItemList)
+		{
+			if(menuItemId == item.getId())
+				return item;
+		}
 		return null;
 	}
 
