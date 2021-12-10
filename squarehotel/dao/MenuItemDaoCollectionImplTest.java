@@ -1,5 +1,6 @@
 package dao;
 
+import java.text.ParseException;
 import java.util.List;
 import model.MenuItem;
 
@@ -15,7 +16,7 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 	
 	public static void testGetMenuItemListAdmin() {
 		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
-		System.out.println("testGetMenuItemListAdmin\n");
+		System.out.println("\ntestGetMenuItemListAdmin");
 		// iterate through menuItemList and display all att for each menu item
 		for (MenuItem item: menuItemDao.getMenuItemListAdmin())
 		{
@@ -25,7 +26,7 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 	
 	public static void testGetMenuItemListCustomer() {
 		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
-		System.out.println("testGetMenuItemListCustomer\n");
+		System.out.println("\ntestGetMenuItemListCustomer");
 		for (MenuItem item: menuItemDao.getMenuItemListCostumer())
 		{
 			System.out.println(item.toString());
@@ -33,7 +34,22 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 	}
 	
 	public static void testModifyMenuItem() {
+		MenuItem item = null;
 		
+		try {
+			// updating itemId 108
+			item = new MenuItem("108,Burger,7.00,true,09/12/2021,Main Course,true");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		MenuItemDao menuItemDao = new MenuItemDaoCollectionImpl();
+		
+		// here item must be modified
+		menuItemDao.modifyMenuItem(item);
+		System.out.println("\ntestModifyMenuItem");
+		System.out.println(menuItemDao.getMenuItem(108).toString());
 	}
 
 	@Override

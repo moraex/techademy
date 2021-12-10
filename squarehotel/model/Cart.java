@@ -21,4 +21,9 @@ public class Cart {
 	public void setTotal(double total) {
 		this.total = total;
 	}
+	
+	// this method did not exist, but I created to make the insertion easier
+	public void addItem(MenuItem item) {
+		this.menuItemList.add(item);
+	}
 }

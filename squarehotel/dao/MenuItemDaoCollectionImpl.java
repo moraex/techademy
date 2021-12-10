@@ -55,8 +55,14 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	@Override
 	public void modifyMenuItem(MenuItem menuitem) {
 		// TODO Auto-generated method stub
-		
-
+		for(MenuItem item: menuItemList)
+		{
+			if(menuitem.getId() == item.getId())
+			{
+				menuItemList.set(menuItemList.indexOf(item), menuitem);
+				break;
+			}
+		}
 	}
 
 	@Override

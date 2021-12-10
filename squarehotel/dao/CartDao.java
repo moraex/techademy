@@ -1,5 +1,10 @@
 package dao;
 
-public interface CartDao {
+import java.util.List;
 
+import model.MenuItem;
+
+public interface CartDao {
+	public void addCartItem(long userId, long menuItemId);
+	public List<MenuItem> getAllCartItems(long userId);
 }
