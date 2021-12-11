@@ -9,4 +9,16 @@ public class CartDaoSqlImpl implements CartDao {
 		
 		return null;
 	}
+
+	@Override
+	public void addCartItem(long userId, long menuItemId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeCartItem(long userId, long menuItemId) {
+		// TODO Auto-generated method stub
+		
+	}
 }

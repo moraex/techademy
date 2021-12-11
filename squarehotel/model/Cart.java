@@ -26,4 +26,8 @@ public class Cart {
 	public void addItem(MenuItem item) {
 		this.menuItemList.add(item);
 	}
+	
+	public void removeItem(int itemIndex) {
+		this.menuItemList.remove(itemIndex);
+	}
 }
