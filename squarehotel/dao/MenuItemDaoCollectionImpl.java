@@ -43,7 +43,12 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 		
 		for(MenuItem item: menuItemList)
 		{
-			if(item.isActive())
+			if(
+					item.isActive() && (
+					item.getDateOfLaunch().before(new java.util.Date())
+					|| item.getDateOfLaunch().equals(new java.util.Date())
+					)
+			)
 			{
 				local.add(item);
 			}
