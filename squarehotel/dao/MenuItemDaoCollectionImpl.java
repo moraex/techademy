@@ -27,6 +27,11 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 		}
 	}
 	
+	@Override
+	public void addMenuItem(MenuItem menuItem) {
+		
+	}
+	
 
 	@Override
 	public List<MenuItem> getMenuItemListAdmin() {

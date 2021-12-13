@@ -51,6 +51,11 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 		System.out.println("\ntestModifyMenuItem");
 		System.out.println(menuItemDao.getMenuItem(108).toString());
 	}
+	
+	@Override
+	public void addMenuItem(MenuItem menuItem) {
+		
+	}
 
 	@Override
 	public List<MenuItem> getMenuItemListAdmin() {

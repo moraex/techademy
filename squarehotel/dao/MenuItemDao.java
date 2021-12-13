@@ -15,4 +15,5 @@ public interface MenuItemDao {
 	public List<MenuItem> getMenuItemListCostumer();
 	public void modifyMenuItem(MenuItem menuitem);
 	public MenuItem getMenuItem(long menuItemId);
+	public void addMenuItem(MenuItem menuItem);
 }
