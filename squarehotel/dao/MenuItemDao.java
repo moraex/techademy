@@ -10,6 +10,7 @@ import model.MenuItem;
  * dentro das interfaces existem somente assinaturas
  *
  */
+
 public interface MenuItemDao {
 	public List<MenuItem> getMenuItemListAdmin();
 	public List<MenuItem> getMenuItemListCostumer();
