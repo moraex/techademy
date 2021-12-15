@@ -139,4 +139,10 @@ public class MenuItemDaoSqlImpl implements MenuItemDao {
         return menuItemList;
     }
 
+	@Override
+	public void deleteItem(long itemId) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

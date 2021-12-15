@@ -1,6 +1,7 @@
 package model;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import util.DateUtil;
 
@@ -18,7 +19,6 @@ public class MenuItem {
 	// constructor with option to set all instance variables
 	public MenuItem(String arg0) throws ParseException {
 		String[] inputs = arg0.split(",");
-		
 		// "id,name,price,active,dateOfLaunch,category,freeDelivery"
 		
 		setId(Long.parseLong(inputs[0]));
@@ -37,8 +37,7 @@ public class MenuItem {
 
 	@Override
 	public String toString() {
-		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateOfLaunch="
-				+ dateOfLaunch + ", category=" + category + ", freeDelivery=" + freeDelivery + "]";
+		return String.format("%s\t%s\t%s\t\t%s\t%s    %s\t%s", id, name, price, active, new SimpleDateFormat("dd/MM/yyyy").format(dateOfLaunch), category,freeDelivery ? "free":"not free");
 	}
 
 	@Override

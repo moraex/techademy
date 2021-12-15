@@ -6,6 +6,10 @@ public class Cart {
 	private List<MenuItem> menuItemList;
 	private double total;
 	
+	public Cart() {
+		total = 0;
+	}
+	
 	public List<MenuItem> getMenuItemList() {
 		return menuItemList;
 	}

@@ -19,8 +19,11 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 		// "id,name,price,active,dateOfLaunch,category,freeDelivery"
 		
 		try {
-			menuItemList.add(new MenuItem("188,Sandwich,3.00,true,06/12/2021,Main Course,true"));
-			menuItemList.add(new MenuItem("108,Burger,5.00,true,06/12/2021,Main Course,true"));
+			menuItemList.add(new MenuItem("001,Sandwich,3.00,true,06/12/2021,Main Course,true"));
+			menuItemList.add(new MenuItem("002,Burger,5.00,true,06/12/2021,Main Course,true"));
+			menuItemList.add(new MenuItem("003,Orange Juice,2.50,true,01/12/2021,Drinks,false"));
+			menuItemList.add(new MenuItem("004,Apple Pie,12.00,true,01/11/2021,Eats,false"));
+			menuItemList.add(new MenuItem("005,X-cake,13.00,true,22/10/2021,Dessert,true"));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +32,7 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 	
 	@Override
 	public void addMenuItem(MenuItem menuItem) {
-		
+		menuItemList.add(menuItem);
 	}
 	
 
@@ -84,6 +87,20 @@ public class MenuItemDaoCollectionImpl implements MenuItemDao {
 				return item;
 		}
 		return null;
+	}
+
+	@Override
+	public void deleteItem(long itemId) {
+		// TODO Auto-generated method stub
+		for(MenuItem item: menuItemList)
+		{
+			if(itemId == item.getId())
+			{
+				this.menuItemList.remove(menuItemList.indexOf(item));
+				break;
+			}
+		}
+		
 	}
 
 }

@@ -11,7 +11,7 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 		testGetMenuItemListAdmin();
 		testGetMenuItemListCustomer();
 		testModifyMenuItem();
-
+		
 	}
 	
 	public static void testGetMenuItemListAdmin() {
@@ -79,6 +79,12 @@ public class MenuItemDaoCollectionImplTest implements MenuItemDao {
 	public MenuItem getMenuItem(long menuItemId) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void deleteItem(long itemId) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
